@@ -1,8 +1,10 @@
-import { MeshReflectorMaterial, Stars, useGLTF, Float, Text, Html, PivotControls, OrbitControls, TransformControls } from "@react-three/drei"
+import { MeshReflectorMaterial, Stars, OrbitControls } from "@react-three/drei"
 import { useRef } from "react"
 import * as THREE from "three"
 import Witch from "./Witch"
 import Skeleton from "./Skeleton"
+import Cauldron from "./Cauldron"
+import CandyText from "./CandyText"
 
 export default function Experience() {    
     const cube = useRef()
@@ -64,7 +66,7 @@ export default function Experience() {
         </mesh> */}
         {/* <TransformControls object={ cube } mode="translate" /> */}
 
-        <mesh position-y={ - 1 } rotation-x={ - Math.PI * 0.5 } scale={ 20 }>
+        <mesh position-y={ - 1 } rotation-x={ - Math.PI * 0.5 } scale={ 40 }>
             <planeGeometry />
             {/* <meshStandardMaterial color="greenyellow" /> */}
             <MeshReflectorMaterial
@@ -77,7 +79,7 @@ export default function Experience() {
             /> 
         </mesh>
 
-        <mesh position-y={ 4 } position-x={ 5 } rotation-y={ - Math.PI * 0.5 } scale={ 20 }>
+        <mesh position-y={ 4 } position-x={ 5 } rotation-y={ - Math.PI * 0.5 } scale={ 40 }>
             <planeGeometry />
             <MeshReflectorMaterial
                 resolution={ 512 }
@@ -94,6 +96,11 @@ export default function Experience() {
         <Witch position={[0, -1, 0]} rotation-y={ - Math.PI * 0.5 } />
 
         <Skeleton position={[0, -1, 2]} rotation-y={ - Math.PI * 0.5 } />
+        
+        <Cauldron position={[-2, -1, 1]} rotation-y={ - Math.PI * 0.5 } />
+        
+        <CandyText />
+
 
         {/* <Float 
             speed={5}
@@ -111,7 +118,7 @@ export default function Experience() {
                 >
                 I LOVE TURID AND ALDE
             </Text>
-        </Float> */}
+        </Float>  */}
 
     </>
 }
